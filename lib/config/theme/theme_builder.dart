@@ -1,11 +1,11 @@
+import 'package:cleantdd/core/core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:cleantdd/core/core.dart';
 
 class ThemeBuilder {
   static ThemeData build(BuildContext context, String theme) {
-    final isDark = theme == AppTheme.dark.value;
-    return _getTheme(context: context, isDark: isDark);
+    final isDarkMode = theme == AppTheme.dark.value;
+    return _getTheme(context: context, isDarkMode: isDarkMode);
   }
 
   static ThemeMode themeMode(String theme) {
@@ -21,61 +21,85 @@ class ThemeBuilder {
     }
   }
 
-  static ThemeData _getTheme(
-      {required BuildContext context, bool isDark = false}) {
+  static ThemeData _getTheme({
+    required BuildContext context,
+    bool isDarkMode = false,
+  }) {
     return ThemeData(
       fontFamily: FontFamilyConstants.fontBeVietNam,
-      primaryColorBrightness: isDark ? Brightness.dark : Brightness.light,
-      brightness: isDark ? Brightness.dark : Brightness.light,
+      primaryColorBrightness: isDarkMode ? Brightness.dark : Brightness.light,
+      brightness: isDarkMode ? Brightness.dark : Brightness.light,
       // unselectedWidgetColor: MyColors.buttonDisable,
       errorColor: MyColors.redColor,
       primaryColor: MyColors.primary,
       disabledColor: MyColors.grayTextColor3,
       primaryIconTheme: IconThemeData(
-        color: isDark ? MyColors.primaryWhite : MyColors.primaryWhite,
+        color: isDarkMode ? MyColors.primaryWhite : MyColors.primaryWhite,
         size: 24,
       ),
       primaryColorDark: MyColors.primaryDark,
-      indicatorColor: isDark ? MyColors.primaryDark : MyColors.primary,
-      scaffoldBackgroundColor: isDark ? Colors.transparent : Colors.transparent,
+      indicatorColor: isDarkMode ? MyColors.primaryDark : MyColors.primary,
+      scaffoldBackgroundColor:
+          isDarkMode ? Colors.transparent : Colors.transparent,
       backgroundColor:
-          isDark ? MyColors.backgroundColor : MyColors.backgroundColor,
+          isDarkMode ? MyColors.backgroundColor : MyColors.backgroundColor,
       canvasColor: MyColors.whiteColor,
       textTheme: TextTheme(
         bodyText1: TextStyles.textSize14
-            .textColor(isDark ? MyColors.primaryWhite : MyColors.primaryDark)
+            .textColor(
+              isDarkMode ? MyColors.primaryWhite : MyColors.primaryDark,
+            )
             .medium,
         bodyText2: TextStyles.textSize13
-            .textColor(isDark ? MyColors.primaryWhite : MyColors.primaryDark)
+            .textColor(
+              isDarkMode ? MyColors.primaryWhite : MyColors.primaryDark,
+            )
             .medium,
         subtitle1: TextStyles.textSize13
-            .textColor(isDark ? MyColors.primaryWhite : MyColors.primaryDark)
+            .textColor(
+              isDarkMode ? MyColors.primaryWhite : MyColors.primaryDark,
+            )
             .medium,
         subtitle2: TextStyles.textSize13
-            .textColor(isDark ? MyColors.primaryWhite : MyColors.primaryDark)
+            .textColor(
+              isDarkMode ? MyColors.primaryWhite : MyColors.primaryDark,
+            )
             .medium,
         headline1: TextStyles.textSize26
-            .textColor(isDark ? MyColors.primaryWhite : MyColors.primaryDark)
+            .textColor(
+              isDarkMode ? MyColors.primaryWhite : MyColors.primaryDark,
+            )
             .bold,
         headline2: TextStyles.textSize24
-            .textColor(isDark ? MyColors.primaryWhite : MyColors.primaryDark)
+            .textColor(
+              isDarkMode ? MyColors.primaryWhite : MyColors.primaryDark,
+            )
             .bold,
         headline3: TextStyles.textSize20
-            .textColor(isDark ? MyColors.primaryWhite : MyColors.primaryDark)
+            .textColor(
+              isDarkMode ? MyColors.primaryWhite : MyColors.primaryDark,
+            )
             .bold,
         headline4: TextStyles.textSize18
-            .textColor(isDark ? MyColors.primaryWhite : MyColors.primaryDark)
+            .textColor(
+              isDarkMode ? MyColors.primaryWhite : MyColors.primaryDark,
+            )
             .bold,
         headline5: TextStyles.textSize14
-            .textColor(isDark ? MyColors.primaryWhite : MyColors.primaryDark)
+            .textColor(
+              isDarkMode ? MyColors.primaryWhite : MyColors.primaryDark,
+            )
             .semiBold,
         headline6: TextStyles.textSize13
-            .textColor(isDark ? MyColors.primaryWhite : MyColors.primaryDark)
+            .textColor(
+              isDarkMode ? MyColors.primaryWhite : MyColors.primaryDark,
+            )
             .medium,
         button: TextStyles.textSize16.primaryWhite.semiBold,
         caption: TextStyles.textSize13
             .textColor(
-                isDark ? MyColors.grayTextColor3 : MyColors.grayTextColor3)
+              isDarkMode ? MyColors.grayTextColor3 : MyColors.grayTextColor3,
+            )
             .regular,
       ),
       inputDecorationTheme: InputDecorationTheme(
@@ -91,11 +115,13 @@ class ThemeBuilder {
         ),
         counterStyle: TextStyles.textSize12
             .textColor(
-                isDark ? MyColors.grayTextColor3 : MyColors.grayTextColor3)
+              isDarkMode ? MyColors.grayTextColor3 : MyColors.grayTextColor3,
+            )
             .regular,
         hintStyle: TextStyles.textSize14
             .textColor(
-                isDark ? MyColors.grayTextColor3 : MyColors.grayTextColor3)
+              isDarkMode ? MyColors.grayTextColor3 : MyColors.grayTextColor3,
+            )
             .regular,
         focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(color: Colors.transparent),
@@ -115,11 +141,12 @@ class ThemeBuilder {
             topRight: Radius.circular(Dimens.size12),
           ),
         ),
-        fillColor: isDark ? MyColors.whiteColor : MyColors.whiteColor,
+        fillColor: isDarkMode ? MyColors.whiteColor : MyColors.whiteColor,
         filled: true,
         errorBorder: OutlineInputBorder(
-          borderSide:
-              BorderSide(color: isDark ? MyColors.redColor : MyColors.redColor),
+          borderSide: BorderSide(
+            color: isDarkMode ? MyColors.redColor : MyColors.redColor,
+          ),
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(Dimens.size12),
             bottomRight: Radius.circular(Dimens.size12),
@@ -128,8 +155,9 @@ class ThemeBuilder {
           ),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderSide:
-              BorderSide(color: isDark ? MyColors.redColor : MyColors.redColor),
+          borderSide: BorderSide(
+            color: isDarkMode ? MyColors.redColor : MyColors.redColor,
+          ),
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(Dimens.size12),
             bottomRight: Radius.circular(Dimens.size12),
@@ -139,27 +167,31 @@ class ThemeBuilder {
         ),
         labelStyle: TextStyles.textSize14
             .textColor(
-                isDark ? MyColors.grayTextColor3 : MyColors.grayTextColor3)
+              isDarkMode ? MyColors.grayTextColor3 : MyColors.grayTextColor3,
+            )
             .regular,
         errorStyle: TextStyles.textSize12
-            .textColor(isDark ? MyColors.redColor : MyColors.redColor)
+            .textColor(
+              isDarkMode ? MyColors.redColor : MyColors.redColor,
+            )
             .regular,
       ),
       appBarTheme: AppBarTheme(
         centerTitle: false,
         titleSpacing: 0.0,
-        titleTextStyle:
-            TextStyles.textSize18.textColor(MyColors.blackTextColor1),
+        titleTextStyle: TextStyles.textSize18.textColor(
+          MyColors.blackTextColor1,
+        ),
         iconTheme: IconThemeData(
-          color: isDark ? MyColors.primary : MyColors.primary,
+          color: isDarkMode ? MyColors.primary : MyColors.primary,
           size: 18,
         ),
         actionsIconTheme: IconThemeData(
           size: 18,
-          color: isDark ? MyColors.primary : MyColors.primary,
+          color: isDarkMode ? MyColors.primary : MyColors.primary,
         ),
         elevation: 0.0,
-        color: isDark ? Colors.transparent : Colors.transparent,
+        color: isDarkMode ? Colors.transparent : Colors.transparent,
       ),
       // dividerTheme: DividerThemeData(
       //   color: isDark ? MyColors.primaryWhite : MyColors.primaryDark,
@@ -167,15 +199,16 @@ class ThemeBuilder {
       //   thickness: 1,
       // ),
       cupertinoOverrideTheme: CupertinoThemeData(
-        brightness: isDark ? Brightness.dark : Brightness.light,
+        brightness: isDarkMode ? Brightness.dark : Brightness.light,
       ),
       bottomSheetTheme: BottomSheetThemeData(
         backgroundColor:
-            isDark ? MyColors.backgroundColor : MyColors.backgroundColor,
+            isDarkMode ? MyColors.backgroundColor : MyColors.backgroundColor,
       ),
       buttonTheme: ButtonThemeData(
-        disabledColor: isDark ? MyColors.brownBGColor : MyColors.brownBGColor,
-        buttonColor: isDark ? MyColors.primaryDark : MyColors.primaryWhite,
+        disabledColor:
+            isDarkMode ? MyColors.brownBGColor : MyColors.brownBGColor,
+        buttonColor: isDarkMode ? MyColors.primaryDark : MyColors.primaryWhite,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(Dimens.size16),
@@ -184,37 +217,43 @@ class ThemeBuilder {
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-              primary: MyColors.primary,
-              textStyle: TextStyles.textBold18,
-              padding: const EdgeInsets.symmetric(
-                vertical: Dimens.size12,
-                horizontal: Dimens.size16,
-              ),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(Dimens.size12)))),
+        style: ElevatedButton.styleFrom(
+          primary: MyColors.primary,
+          textStyle: TextStyles.textBold18,
+          padding: const EdgeInsets.symmetric(
+            vertical: Dimens.size12,
+            horizontal: Dimens.size16,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(Dimens.size12),
+          ),
+        ),
+      ),
       textButtonTheme: TextButtonThemeData(
-          style: TextButton.styleFrom(
-        textStyle:
-            TextStyles.textBold18.copyWith(color: MyColors.blackTextColor1),
-        primary: MyColors.primary,
-        padding: const EdgeInsets.symmetric(
-          vertical: Dimens.size12,
-          horizontal: Dimens.size16,
+        style: TextButton.styleFrom(
+          textStyle: TextStyles.textBold18.copyWith(
+            color: MyColors.blackTextColor1,
+          ),
+          primary: MyColors.primary,
+          padding: const EdgeInsets.symmetric(
+            vertical: Dimens.size12,
+            horizontal: Dimens.size16,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(Dimens.size12),
+            side: BorderSide(color: MyColors.primary),
+          ),
         ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(Dimens.size12),
-          side: BorderSide(color: MyColors.primary),
-        ),
-      )),
+      ),
       iconTheme: IconThemeData(
-        color: isDark ? MyColors.primary : MyColors.primary,
+        color: isDarkMode ? MyColors.primary : MyColors.primary,
         size: 24,
       ),
       dialogBackgroundColor:
-          isDark ? MyColors.backgroundColor : MyColors.backgroundColor,
+          isDarkMode ? MyColors.backgroundColor : MyColors.backgroundColor,
       timePickerTheme: TimePickerThemeData(
-          backgroundColor: isDark ? MyColors.primaryDark : MyColors.primary),
+        backgroundColor: isDarkMode ? MyColors.primaryDark : MyColors.primary,
+      ),
       cardTheme: const CardTheme(
         margin: EdgeInsets.zero,
         clipBehavior: Clip.antiAlias,
