@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:cleantdd/core/core.dart';
 import 'package:cleantdd/presentation/presentation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+
 import 'config/config.dart';
 
 void main() {

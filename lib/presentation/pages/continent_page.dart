@@ -1,8 +1,8 @@
+import 'package:cleantdd/presentation/presentation.dart';
+import 'package:cleantdd/presentation/widgets/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:cleantdd/presentation/presentation.dart';
-import 'package:flutter/material.dart';
-import 'package:cleantdd/presentation/widgets/widgets.dart';
 
 class ContinentPage extends StatelessWidget {
   const ContinentPage({Key? key}) : super(key: key);
@@ -31,15 +31,15 @@ class ContientMainWidget extends StatelessWidget {
         }
       },
       builder: (context, state) {
-        if (!(state is ContinentData)) {
-          return SizedBox();
+        if (state is! ContinentData) {
+          return const SizedBox.shrink();
         }
         return Center(
           child: Column(
             children: [
               Text(
                 state.continent.name ?? '',
-              )
+              ),
             ],
           ),
         );

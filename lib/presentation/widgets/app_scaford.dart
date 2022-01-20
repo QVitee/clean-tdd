@@ -1,9 +1,18 @@
+import 'package:cleantdd/core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
-import 'package:cleantdd/core/core.dart';
 
 class AppScaford<T extends Bloc> extends StatefulWidget {
+  final Widget body;
+  final Widget? title;
+  final Future Function(Object? params, T? bloc)? onReveiveArguments;
+  final Function()? onWillPop;
+  final Function(T? bloc)? loadData;
+  final bool isBack;
+  final bool safeArea;
+  final EdgeInsets padding;
+
   const AppScaford({
     Key? key,
     required this.body,
@@ -15,14 +24,6 @@ class AppScaford<T extends Bloc> extends StatefulWidget {
     this.safeArea = true,
     this.loadData,
   }) : super(key: key);
-  final Widget body;
-  final Widget? title;
-  final Future Function(Object? params, T? bloc)? onReveiveArguments;
-  final Function()? onWillPop;
-  final Function(T? bloc)? loadData;
-  final bool isBack;
-  final EdgeInsets padding;
-  final bool safeArea;
 
   @override
   State<AppScaford<T>> createState() => _AppScafordState<T>();
@@ -35,8 +36,9 @@ class _AppScafordState<T extends Bloc> extends State<AppScaford<T>> {
   void initState() {
     super.initState();
     bloc = GetIt.I.get<T>();
-    WidgetsBinding.instance
-        ?.addPostFrameCallback((_) => widget.loadData?.call(bloc));
+    WidgetsBinding.instance?.addPostFrameCallback(
+      (_) => widget.loadData?.call(bloc),
+    );
   }
 
   @override
