@@ -1,0 +1,21 @@
+/* 
+  InfoPlist.strings
+  Runner
+
+  Created by PhuNV13 on 08/04/2021.
+  
+*/
+"NSBluetoothAlwaysUsageDescription"="Bạn cần cấp quyền truy cập Bluetooth để kết nối với thiết bị";
+"NSBluetoothPeripheralUsageDescription"="Bạn cần cấp quyền truy cập Bluetooth để kết nối với thiết bị";
+"NSCameraUsageDescription"="Bạn cần cấp quyền truy cập ảnh để có thể chụp ảnh đại diện";
+"NSLocationAlwaysAndWhenInUseUsageDescription"="Bạn cần cấp quyền truy cập vị trí để tìm kiếm thiết bị";
+"NSLocationAlwaysUsageDescription"="Bạn cần cấp quyền truy cập vị trí để tìm kiếm thiết bị";
+"NSLocationWhenInUseUsageDescription"="Bạn cần cấp quyền truy cập vị trí để tìm kiếm thiết bị";
+"NSPhotoLibraryUsageDescription"="Bạn cần cấp quyền truy cập ảnh để có thể chọn ảnh đại diện";
+"NSPhotoLibraryAddUsageDescription" = "Bạn cần cấp quyền truy cập ảnh để có thể chọn ảnh đại diện";
+"NSCalendarsUsageDescription"="Bạn cần cấp quyền truy cập lịch để Clean TDD có thể thêm vào lịch những sự kiện quan trọng";
+"NSAppleMusicUsageDescription"="This app requires access to the apple music";
+"NSMotionUsageDescription"="This app requires access to the motion";
+"NSSpeechRecognitionUsageDescription"="This app requires access to the speech recognition";
+"NSContactsUsageDescription"="This app requires access to the contacts recognition";
+

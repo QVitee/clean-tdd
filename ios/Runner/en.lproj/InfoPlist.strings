@@ -1,0 +1,20 @@
+/* 
+  InfoPlist.strings
+  Runner
+
+  Created by PhuNV13 on 08/04/2021.
+  
+*/
+"NSBluetoothAlwaysUsageDescription" = "You need to grant Bluetooth access to connect to the device ";
+"NSBluetoothPeripheralUsageDescription" = "You need to grant Bluetooth access to connect to the device";
+"NSCameraUsageDescription" = "You need to grant photo access to be able to take avatars";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "You need to grant location permission to search for the device";
+"NSLocationAlwaysUsageDescription" = "You need to grant location permission to search for the device";
+"NSLocationWhenInUseUsageDescription" = "You need to grant location permission to search for the device";
+"NSPhotoLibraryUsageDescription" = "You need to grant photo access to be able to select your profile picture";
+"NSPhotoLibraryAddUsageDescription" = "You need to give photo permissions to be able to select your profile picture";
+"NSCalendarsUsageDescription" = "This app requires access to the calendar";
+"NSAppleMusicUsageDescription" = "This app requires access to the apple music";
+"NSMotionUsageDescription" = "This app requires access to the motion";
+"NSSpeechRecognitionUsageDescription" = "This app requires access to the speech recognition";
+"NSContactsUsageDescription" = "This app requires access to the contacts recognition";
