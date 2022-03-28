@@ -14,9 +14,11 @@ analyzer:
     dead_code: info
     todo: ignore
     use_setters_to_change_properties: ignore
-
+    invalid_annotation_target: ignore
   exclude:
     - lib/generated/*.g.dart
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
 
 linter:
   rules:

@@ -16,6 +16,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.4
+  freezed: ^1.1.1
   get_it: ^7.2.0
   equatable: ^2.0.3
   dartz: ^0.10.0
